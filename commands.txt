@@ -1,0 +1,402 @@
+  remotes/origin/main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git pull
+From https://github.com/mohanrraj/gitlocalfolderadd
+ * [new branch]      branch1    -> origin/branch1
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git branch -a
+* main
+  remotes/origin/branch1
+  remotes/origin/main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git checkout branch1
+branch 'branch1' set up to track 'origin/branch1'.
+Switched to a new branch 'branch1'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git branch
+* branch1
+  main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git add .
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git commit -m "Create branch1.txt"
+[branch1 523c299] Create branch1.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch1.txt
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git push origin branch1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 359 bytes | 359.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/mohanrraj/gitlocalfolderadd.git
+   ebdaa51..523c299  branch1 -> branch1
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git branch
+* branch1
+  main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git checkout main
+Switched to branch 'main'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is up to date with 'origin/branch1'.
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git diff main
+diff --git a/branch1.txt b/branch1.txt
+new file mode 100644
+index 0000000..726910d
+--- /dev/null
++++ b/branch1.txt
+@@ -0,0 +1 @@
++This file only located on the branch1 
+\ No newline at end of file
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git checkout main
+Switched to branch 'main'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git diff branch1
+diff --git a/branch1.txt b/branch1.txt
+deleted file mode 100644
+index 726910d..0000000
+--- a/branch1.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This file only located on the branch1
+\ No newline at end of file
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git merge branch1
+Updating ebdaa51..523c299
+Fast-forward
+ branch1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch1.txt
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/mohanrraj/gitlocalfolderadd.git
+   ebdaa51..523c299  main -> main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$
+ *  History restored 
+
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice
+$ cd gitremoteadd/
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git branch
+  branch1
+* main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git branch -a
+  branch1
+* main
+  remotes/origin/branch1
+  remotes/origin/main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git branch branch2
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git branch -a
+  branch1
+  branch2
+* main
+  remotes/origin/branch1
+  remotes/origin/main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch2)
+$ git add .
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch2)
+$ git commit -m "Create branch2 and added branch2 file"
+[branch2 bd5c5ca] Create branch2 and added branch2 file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch2.txt
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch2)
+$ git push origin main
+Everything up-to-date
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch2)
+$ git push origin branch2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 296 bytes | 296.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'branch2' on GitHub by visiting:
+remote:      https://github.com/mohanrraj/gitlocalfolderadd/pull/new/branch2
+remote:
+To https://github.com/mohanrraj/gitlocalfolderadd.git
+ * [new branch]      branch2 -> branch2
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch2)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is up to date with 'origin/branch1'.
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch2)
+$ git checkout main
+Switched to branch 'main'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 902 bytes | 300.00 KiB/s, done.
+From https://github.com/mohanrraj/gitlocalfolderadd
+   523c299..4bc02ad  main       -> origin/main
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git branch
+  branch1
+  branch2
+* main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git pull remote main
+fatal: 'remote' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git pull origin main
+From https://github.com/mohanrraj/gitlocalfolderadd
+ * branch            main       -> FETCH_HEAD
+Updating 523c299..4bc02ad
+Fast-forward
+ branch2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch2.txt
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git branch -a
+  branch1
+  branch2
+* main
+  remotes/origin/branch1
+  remotes/origin/branch2
+  remotes/origin/main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ git checkout branch1
+Switched to branch 'branch1'
+Your branch is up to date with 'origin/branch1'.
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch1)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (branch2)
+$ git checkout main
+Switched to branch 'main'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitremoteadd (main)
+$ cd ..
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice
+$ git clone https://github.com/mohanrraj/gitfinaltest.git
+Cloning into 'gitfinaltest'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice
+$ cd gitfinaltest/
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (main)
+$ git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/ramesh
+  remotes/origin/suresh
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (main)
+$ git checkout ramesh 
+branch 'ramesh' set up to track 'origin/ramesh'.
+Switched to a new branch 'ramesh'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (ramesh)
+$ git branch
+  main
+* ramesh
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (ramesh)
+$ git status
+On branch ramesh
+Your branch is up to date with 'origin/ramesh'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   vijay.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (ramesh)
+$ git add .
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (ramesh)
+$ git commit -m "Add about Vijay"
+[ramesh a476915] Add about Vijay
+ 1 file changed, 11 insertions(+)
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (ramesh)
+$ git push origin ramesh
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.15 KiB | 1.15 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/mohanrraj/gitfinaltest.git
+   830bc02..a476915  ramesh -> ramesh
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (ramesh)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (main)
+$ git merge ramesh
+Updating 830bc02..a476915
+Fast-forward
+ vijay.html | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (main)
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/mohanrraj/gitfinaltest.git
+   830bc02..a476915  main -> main
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (main)
+$ git checkout suresh
+branch 'suresh' set up to track 'origin/suresh'.
+Switched to a new branch 'suresh'
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (suresh)
+$ git pull origin main
+From https://github.com/mohanrraj/gitfinaltest
+ * branch            main       -> FETCH_HEAD
+Updating 830bc02..a476915
+Fast-forward
+ vijay.html | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (suresh)
+$ git add .
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (suresh)
+$ git commit -m "Add Vijay Contact No"
+[suresh 7c621b2] Add Vijay Contact No
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (suresh)
+$ git push origin suresh
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/mohanrraj/gitfinaltest.git
+   830bc02..7c621b2  suresh -> suresh
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (suresh)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (main)
+$ git merge suresh
+Updating a476915..7c621b2
+Fast-forward
+ vijay.html | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+mohan@RaviAbiSugu MINGW64 /d/Web Development/Git and GitHub Tutorial/Git Practice/gitfinaltest (main)
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/mohanrraj/gitfinaltest.git
+   a476915..7c621b2  main -> main
